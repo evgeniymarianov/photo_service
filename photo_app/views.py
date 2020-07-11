@@ -4,7 +4,8 @@ from django.http import HttpResponseRedirect
 
 def user_page(request):
     if request.method == 'GET':
-        return render(request, 'user_page.html')
+        pictures = Picture.objects.all()
+        return render(request, 'user_page.html', {'pictures': pictures})
     if request.method == 'POST':
         picture = Picture(
             description = request.POST['description'],

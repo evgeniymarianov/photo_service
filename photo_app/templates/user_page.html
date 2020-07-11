@@ -14,5 +14,12 @@
     <input type="file" name="picture">
     <input type="submit" value="Submit">
 </form>
+
+{% for pic in pictures %}
+<div class="alert alert-info">
+        <h2>{{ pic.file }}</h2>
+</div>
+{% endfor %}
+
 </body>
 </html>
